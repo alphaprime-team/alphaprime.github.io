@@ -2,6 +2,8 @@ RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)$ $1.html
+RewriteCond %{HTTP_HOST} ^www.alphaprimerescue.com [NC]
+RewriteRule ^(.*)$ http://alphaprimerescue.com/$1 [L,R=301]
 
 # 1 Week for most static assets
 <filesMatch ".(jpg|jpeg|png|gif|ico|svg)$">
